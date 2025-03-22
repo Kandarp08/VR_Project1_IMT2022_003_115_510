@@ -179,7 +179,22 @@ The validation loss across multiple runs with various hyperparameters.
 
 ## 3. Part C
 
-After completing the segmentation for each of the 500 images, the average IoU is calculated. It turns out to be <b>0.52</b>. Some of the segmented outputs are shown below:
+After completing the segmentation for each of the 500 images, the average IoU is calculated. It turns out to be <b>0.52</b>. Some of the segmented outputs are shown below along with the ground truths:
+
+![Segmented image 1](images/Traditional_segmentation/000020_1.jpg.png)
+![Ground truth 1](dataset/MSFD/1/face_crop_segmentation/000020_1.jpg)
+
+![Segmented image 2](images/Traditional_segmentation/000029_1.jpg.png)
+![Ground truth 2](dataset/MSFD/1/face_crop_segmentation/000029_1.jpg)
+
+![Segmented image 3](images/Traditional_segmentation/000051_1.jpg.png)
+![Ground truth 3](dataset/MSFD/1/face_crop_segmentation/000051_1.jpg)
+
+![Segmented image 4](images/Traditional_segmentation/000056_1.jpg.png)
+![Ground truth 4](dataset/MSFD/1/face_crop_segmentation/000056_1.jpg)
+
+![Segmented image 5](images/Traditional_segmentation/000242_2.jpg.png)
+![Ground truth 5](dataset/MSFD/1/face_crop_segmentation/000242_2.jpg)
 
 ## 4. Part D
 

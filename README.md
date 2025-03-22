@@ -275,7 +275,14 @@ The image above shows a sample of validation images, with columns representing: 
 
 ## CNN (Part B)
 
+**Observations:**
 
+*   **High Accuracy Achieved:** After hyperparameter optimization, the best model achieved a validation accuracy of 97%.
+*   **Consistent Training & Validation:** Good training and validation accuracies indicated no overfitting and generalization was successful.
+
+**Analysis:**
+
+The optimized CNN model demonstrated strong performance in distinguishing between images with and without masks. This suggests that the chosen architecture and optimized hyperparameters allowed the model to effectively learn discriminating features within the images. The strong consistency between training and validation performance indicates the model generalizes well to unseen data. The relatively simple task did not demand a very complex neural network.
 
 ## Traditional Segmentation (Part C)
 
@@ -293,5 +300,14 @@ The image above shows a sample of validation images, with columns representing: 
 
 
 ## U-Net (Part D)
+
+**Observations:**
+
+*   **Strong Metric Performance:** A high validation accuracy, Dice, and IoU scores, representing a good segmentation of the masks in the image.
+*   **Clear Visual Agreement:** Visual inspection of prediction grids reveal that predicted masks agree closely with ground truth masks.
+
+**Analysis:**
+
+The high validation metrics on the U-Net indicates effective learning of the segmentation task. Visual inspection of results also indicates good model performance, meaning it is doing a reasonable job of classifying pixels. The strong performance suggests the U-Net architecture is appropriate for the task and can learn mask features effectively.
 
 # Running the Code

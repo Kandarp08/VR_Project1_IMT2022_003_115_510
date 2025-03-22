@@ -181,20 +181,32 @@ The validation loss across multiple runs with various hyperparameters.
 
 After completing the segmentation for each of the 500 images, the average IoU is calculated. It turns out to be <b>0.52</b>. Some of the segmented outputs are shown below along with the ground truths:
 
-![Segmented image 1](images/Traditional_segmentation/000020_1.jpg.png)
-![Ground truth 1](dataset/MSFD/1/face_crop_segmentation/000020_1.jpg)
-
-![Segmented image 2](images/Traditional_segmentation/000029_1.jpg.png)
-![Ground truth 2](dataset/MSFD/1/face_crop_segmentation/000029_1.jpg)
-
-![Segmented image 3](images/Traditional_segmentation/000051_1.jpg.png)
-![Ground truth 3](dataset/MSFD/1/face_crop_segmentation/000051_1.jpg)
-
-![Segmented image 4](images/Traditional_segmentation/000056_1.jpg.png)
-![Ground truth 4](dataset/MSFD/1/face_crop_segmentation/000056_1.jpg)
-
-![Segmented image 5](images/Traditional_segmentation/000242_2.jpg.png)
-![Ground truth 5](dataset/MSFD/1/face_crop_segmentation/000242_2.jpg)
+<table>
+    <tr>
+        <th>Segmented Output</th>
+        <th>Ground Truth</th>
+    </tr>
+    <tr>
+        <td><img src="images/Traditional_segmentation/000020_1.jpg.png" alt="Segmented image 1" width="300" height="100"></td>
+        <td><img src="images/Traditional_segmentation/000020_1.jpg" alt="Ground truth 1" width="300" height="100"></td>
+    </tr>
+    <tr>
+        <td><img src="images/Traditional_segmentation/000029_1.jpg.png" alt="Segmented image 2" width="300" height="100"></td>
+        <td><img src="images/Traditional_segmentation/000029_1.jpg" alt="Ground truth 2" width="300" height="100"></td>
+    </tr>
+    <tr>
+        <td><img src="images/Traditional_segmentation/000051_1.jpg.png" alt="Segmented image 3" width="300" height="100"></td>
+        <td><img src="images/Traditional_segmentation/000051_1.jpg" alt="Ground truth 3" width="300" height="100"></td>
+    </tr>
+    <tr>
+        <td><img src="images/Traditional_segmentation/000056_1.jpg.png" alt="Segmented image 4" width="300" height="100"></td>
+        <td><img src="images/Traditional_segmentation/000056_1.jpg" alt="Ground truth 4" width="300" height="100"></td>
+    </tr>
+    <tr>
+        <td><img src="images/Traditional_segmentation/000242_2.jpg.png" alt="Segmented image 5" width="300" height="100"></td>
+        <td><img src="images/Traditional_segmentation/000242_2.jpg" alt="Ground truth 5" width="300" height="100"></td>
+    </tr>
+</table>
 
 ## 4. Part D
 
@@ -260,6 +272,21 @@ The image above shows a sample of validation images, with columns representing: 
 *   **Activation Function:** `Leaky_Relu` shows better performances.
 *   **Dropout**: The best results came from experiments that used a dropout of 0.
 *   **Overfitting:** Some runs show a divergence between training and validation loss/accuracy, suggesting potential overfitting. This highlights the importance of techniques like dropout and data augmentation. The chosen configuration minimizes dropout, relying more on batch normalization and data augmentation to combat overfitting.
+
+## Traditional Segmentation (Part C)
+
+**Challenges faced:** 
+
+* Most of the images have edges in the face, and inside the mask region as well. This causes many unnecessary edges to be detected.
+
+* Segmentation on some images resulted in the face being segmented, while the mask region was segmented as background. This was causing a drastic reduction in the average IoU.
+
+**Methods used:**
+
+* To remove unnecessary edges, blurring was done using a Gaussian fileter. However, too much blurring caused the edges near the mask to not be detected.
+
+* To overcome the second problem, two sets of segmented images were generated, as mentioned in the methodology. The segmented image with a greater number of white pixels in the lower region of the image was considered better. This is why both binary as well inverse binary thresholding were performed.
+
 
 ## U-Net (Part D)
 *   **Batch Normalization:**  The parallel coordinates plot strongly suggests that using batch normalization (`use_batchnorm = True`) significantly improves model performance.

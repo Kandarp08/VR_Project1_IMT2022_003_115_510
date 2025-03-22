@@ -266,12 +266,7 @@ The image above shows a sample of validation images, with columns representing: 
 
 ## CNN (Part B)
 
-*   **Hyperparameter Optimization:** The parallel coordinate plot provides significant insights into the influence of hyperparameters on the model's validation accuracy.
-*   **Batch Normalization:** `use_batch_norm = True` consistently leads to better performance, as expected.  Batch normalization helps stabilize training and allows for higher learning rates.
-*   **Learning Rate:** The best values are located around a learning rate of `0.001`.  This suggests that smaller learning rate adjustments are beneficial for this specific architecture and dataset.
-*   **Activation Function:** `Leaky_Relu` shows better performances.
-*   **Dropout**: The best results came from experiments that used a dropout of 0.
-*   **Overfitting:** Some runs show a divergence between training and validation loss/accuracy, suggesting potential overfitting. This highlights the importance of techniques like dropout and data augmentation. The chosen configuration minimizes dropout, relying more on batch normalization and data augmentation to combat overfitting.
+
 
 ## Traditional Segmentation (Part C)
 
@@ -289,18 +284,5 @@ The image above shows a sample of validation images, with columns representing: 
 
 
 ## U-Net (Part D)
-*   **Batch Normalization:**  The parallel coordinates plot strongly suggests that using batch normalization (`use_batchnorm = True`) significantly improves model performance.
-
-*   **Learning Rate:** A learning rate in the range of 0.008-0.009 appears to be optimal.  Lower learning rates might lead to slower convergence, while higher rates could cause instability.
-
-*   **Filters Base and Depth:**  Increasing the `filters_base` parameter (up to a point) and using a U-Net depth of 3 or 4 generally improves performance. This suggests that a more complex model with more capacity is beneficial for this task.
-
-*    **Dropout Rate:** The lower the dropout rate, the better validation accuracy in general, as per the given parallel coordinate plot.
-
-*   **Overfitting:** While the training loss continues to decrease, the validation loss plateaus or even slightly increases in some runs, suggesting the potential for minor overfitting. However, the validation accuracy and IoU/Dice scores continue to improve (or remain stable), so this overfitting is not severe.
-
-*   **Challenges:** Handling grayscale masks with 256 classes (pixel intensity levels) can be more challenging than binary segmentation (mask/no-mask).  The choice of Cross-Entropy loss is appropriate for this multi-class scenario.
-
-*   **Improvements:** The U-Net training could benefit from a learning rate scheduler, weight decay and early stopping.
 
 # Running the Code

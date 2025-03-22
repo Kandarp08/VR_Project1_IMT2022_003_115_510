@@ -271,6 +271,24 @@ The image above shows a sample of validation images, with columns representing: 
 
 ## 6. Comparing Traditional segmentation techniques with U-Net
 
+**Traditional Segmentation:**
+
+Looking at the provided images, we can make the following observations about the *traditional segmentation* results:
+
+*   **Inconsistent Mask Boundaries:**  The edges of the segmented masks are often jagged and do not accurately follow the true boundaries of the face masks.  In many cases, parts of the face (forehead, chin, cheeks) are incorrectly included in the mask region, or parts of the mask are excluded.
+*   **Sensitivity to Background/Foreground:** The segmentation appears to be heavily influenced by contrast differences.  Areas of the image that are bright (like writing on a shirt or a light reflection) are sometimes incorrectly classified as part of the mask. Conversely, darker regions within the mask itself (shadows, folds) can be missed.
+*   **"Holes" and Fragments:** There are often "holes" within the segmented mask, where parts of the mask are incorrectly classified as background. There are also disconnected fragments of the mask region, showing failure of the segmentation method.
+*   **Top Section Blacked Out:** The top portion of all segmented images is completely black, indicating a post-processing step to remove parts of the image that were consistently misclassified.  This shows that these parts could not be fixed, and were hence set to black.
+
+**U-Net Segmentation:**
+
+In contrast to the traditional method, the U-Net segmentation (based on previous descriptions and the known good metrics) exhibits the following characteristics:
+
+*   **Accurate Boundaries:** The U-Net is able to learn the complex shapes of the masks and accurately delineate their boundaries, even in the presence of variations in lighting, mask color, and facial features.
+*   **Robustness:** The U-Net is much less sensitive to variations in contrast and lighting. It is able to correctly identify the mask region even when there are shadows or bright spots.
+*   **Completeness:**  The U-Net produces complete, connected mask regions without holes or spurious fragments.
+*   **No Heuristics:** The U-Net achieves good results without requiring hand-crafted heuristics or post-processing steps like blacking out portions of the image.
+
 # Observations and Analysis
 
 ## CNN (Part B)

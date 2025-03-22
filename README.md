@@ -434,8 +434,4 @@ The optimized CNN model demonstrated strong performance in distinguishing betwee
 
 The high validation metrics on the U-Net indicates effective learning of the segmentation task. Visual inspection of results also indicates good model performance, meaning it is doing a reasonable job of classifying pixels. The strong performance suggests the U-Net architecture is appropriate for the task and can learn mask features effectively.
 
-<<<<<<< HEAD
 # Running the Code
-=======
-# Running the Code
->>>>>>> 8ede9bebaa8ae3d8df1346a581fbb5ec2fccf5f0

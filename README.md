@@ -122,6 +122,7 @@ The provided parallel coordinates plot and line graphs illustrate the results of
 The parallel coordinate plot, particularly the lines colored in the yellow/orange range (corresponding with higher val_accuracy), indicates optimal value ranges for these hyperparameters.
 
 <br>
+
 **Parallel Coordinates Plot:**
 
 ![Parallel Coordinates Plot](images/CNN_detection/PCP_CNN_detection.png)
@@ -155,6 +156,7 @@ The parallel coordinates plot shows the relationships between these hyperparamet
 ![Hyperparameter Importance and Correlation](images/UNET_segmentation/unet_correlation.png)
 
 <br>
+
 **Parallel Coordinates Plot:**
 
 ![Parallel Coordinates Plot](images/UNET_segmentation/unet_pcp.png)

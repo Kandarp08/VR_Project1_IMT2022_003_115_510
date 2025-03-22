@@ -24,11 +24,6 @@ Part A focuses on face mask detection using Handcrafted Features and ML Classifi
    * `Random Forest(RF)`: 200 trees, `max_depth=20`, and class balancing.  
    * `Neural Network Model`:  A simple feedforward network with ReLU activations, dropout, and sigmoid activation for binary classification.  
 
-4. **Evaluation:**
-
-
-
-
 ## 2. Part B
 
 Part B focuses on face mask detection using a Convolutional Neural Network (CNN).  The approach involves these key steps:
@@ -186,7 +181,7 @@ The parallel coordinates plot shows the relationships between these hyperparamet
 
 ## 1. Part A
   * `SVM`  
-   
+  
   | Class | Precision | Recall | F1-Score | Support |
   |-------|-----------|--------|----------|---------|
   | 0     | 0.94      | 0.94   | 0.94     | 386     |      

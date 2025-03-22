@@ -10,6 +10,46 @@
 
 ## 2. Part B
 
+Part B focuses on face mask detection using a Convolutional Neural Network (CNN).  The approach involves these key steps:
+
+1.  **Data Loading and Preprocessing:**
+    *   A custom `FaceMaskDataset` class (PyTorch Dataset) is created to handle loading images and their corresponding labels ("with_mask" or "without_mask").
+    *   Images are loaded using OpenCV (cv2), converted from BGR to RGB color space, and resized to a consistent size of 128x128 pixels.
+    *   Data augmentation is applied using `torchvision.transforms`:
+        *   `RandomHorizontalFlip`: Randomly flips images horizontally.
+        *   `RandomRotation(20)`: Randomly rotates images by up to 20 degrees.
+        *  `Normalize`: Normalizes the pixel values using pre-calculated mean and standard deviation values (`[0.5748376, 0.49752444, 0.46703878]` and `[0.25625145, 0.24203679, 0.23397043]`, respectively).
+    *   The dataset is split into training (80%) and validation (20%) sets using `torch.utils.data.random_split`.
+    *   PyTorch `DataLoader`s are used to create batches of data for training and validation, enabling efficient GPU utilization. The batch size of 128 and `num_workers` are configured.
+
+2.  **Model Definition (CNN):**
+    *   A flexible CNN architecture is defined using PyTorch's `nn.Module`.
+    *   `ConvBlock`:  A reusable convolutional block is defined, comprising a convolutional layer (`nn.Conv2d`), optional batch normalization (`nn.BatchNorm2d`), an activation function (ReLU, LeakyReLU, ELU, Tanh, or Sigmoid), and an optional pooling layer (Max or Average Pooling).
+    *   `CNN`:  The main CNN class is highly configurable:
+        *   `in_channels`: Number of input channels (3 for RGB images).
+        *   `num_classes`: Number of output classes (2 for "with_mask" and "without_mask").
+        *   `conv_channels`:  A *list* specifying the number of output channels for *each* convolutional layer.
+        *   `kernel_sizes`, `pool_types`, `pool_sizes`, `activations`: Lists specifying the parameters for each convolutional block.  The `_extend_param` method ensures these lists are the correct length, repeating the last element if necessary.
+        *   `use_batch_norm`:  A boolean flag to enable/disable batch normalization.
+        *   `fc_sizes`: A list specifying the sizes of the fully connected layers.
+        *   `dropout_rates`:  A list of dropout rates for the fully connected layers.
+        *   `final_pool_size`:  The output size of the adaptive average pooling layer (`nn.AdaptiveAvgPool2d`) before the fully connected layers. This makes the network less sensitive to the input image size.
+    *   The model architecture consists of a sequence of `ConvBlock`s, followed by adaptive average pooling, flattening, and then a series of fully connected layers with dropout and the specified activation functions.  The final layer has `num_classes` output units.
+
+3.  **Training:**
+    *   The `train_model` function handles the training loop:
+        *   Device Selection:  Uses CUDA (GPU) if available, otherwise falls back to CPU.
+        *   Optimizer: Supports Adam, AdamW, and SGD optimizers.
+        *   Loss Function:  Uses `nn.CrossEntropyLoss` (appropriate for multi-class classification).
+        *   Epochs and Batches: Iterates through epochs and batches of training data.
+        *   Forward and Backward Pass:  Calculates predictions, loss, performs backpropagation, and updates model weights.
+        *   Progress Bar (tqdm):  Displays a progress bar with training loss and accuracy.
+        *   Validation:  Evaluates the model on the validation set after each epoch, calculating validation loss and accuracy.
+        *   Metric Logging: Stores training/validation loss and accuracy for later plotting.
+
+4.  **Evaluation:**
+    *   The `train_model` function returns both the trained model and a dictionary containing the training history (losses and accuracies).  This history is used to plot learning curves.
+
 ## 3. Part C
 
 ## 4. Part D
@@ -52,6 +92,24 @@ The core of Part D focuses on semantic segmentation of face masks in images usin
 
 ## 1. Part B
 
+The provided parallel coordinates plot and line graphs illustrate the results of hyperparameter optimization. The key hyperparameters explored were:
+
+* **`activations`**:  Activation function used in the convolutional and fully connected layers (`relu`, `leaky_relu`, `elu`, `y_relu`). `Leaky_relu` was selected for the final model based on performance.
+* **`batch_size`**: Batch size for training and validation data loaders (ranging from approximately 10 to 130). The shown experiments were run with a value of 128.
+* **`conv_channels`**:  Number of output channels for each convolutional layer (various combinations of 16, 32, 64, and 128).  The model used a configuration of `[32, 64, 128]`.
+* **`dropout_rates`**:  Dropout rates for the fully connected layers (0, 0.3, 0.5). A value of 0 leads to higher val_accuracy.
+* **`fc_sizes`**:  Sizes of the fully connected layers (various combinations).  The model used `[128, 64]`.
+* **`use_batch_norm`**: Boolean flag to enable/disable batch normalization (True/False).  `True` (enabled) was chosen for the best model.
+* **`optimizer`**: Choice of optimizer (`adam`, `adamw`). `adamw` was selected.
+* **`learning_rate`**: Learning rate for the optimizer (ranging from approximately 0.001 to 0.009). The best performing runs were around a learning rate of 0.001.
+
+The parallel coordinate plot, particularly the lines colored in the yellow/orange range (corresponding with higher val_accuracy), indicates optimal value ranges for these hyperparameters.
+
+<br>
+**Parallel Coordinates Plot:**
+
+![Parallel Coordinates Plot](images/CNN_detection/PCP_CNN_detection.png)
+
 ## 2. Part D
 
 Based on the provided parallel coordinates plot, several hyperparameter configurations were explored for the U-Net model. The most relevant parameters and their ranges are:
@@ -87,6 +145,25 @@ The parallel coordinates plot shows the relationships between these hyperparamet
 
 ## 2. Part B
 
+The provided graphs illustrate the model performance during the hyperparameter tuning.
+
+**Training Accuracy:**
+![Training Accuracy](images/CNN_detection/cnn_train_acc.png)
+The training accuracy across multiple runs with various hyperparameters.
+
+**Validation Accuracy:**
+![Validation Accuracy](images/CNN_detection/cnn_val_acc.png)
+The validation accuracy across multiple runs with various hyperparameters, which reached up to approximately 97%.
+
+**Training Loss:**
+![Training Loss](images/CNN_detection/cnn_train_loss.png)
+The training loss across multiple runs with various hyperparameters.
+
+**Validation Loss:**
+![Validation Loss](images/CNN_detection/cnn_val_loss.png)
+The validation loss across multiple runs with various hyperparameters.
+
+
 ## 3. Part C
 
 ## 4. Part D
@@ -95,9 +172,7 @@ The provided line graphs show the training and validation metrics over 10 epochs
 
 **Training Loss:**
 
-![Training Loss](images/training_loss.png)
-
-*Note: Ensure 'images/training_loss.png' exists in the 'images' folder.*
+![Training Loss](images/UNET_segmentation/unet_train_loss.png)
 
 The training loss generally decreases across all runs, with most runs reaching a training loss below 0.8.
 
@@ -105,9 +180,7 @@ The training loss generally decreases across all runs, with most runs reaching a
 
 **Validation Accuracy:**
 
-![Validation Accuracy](images/validation_accuracy.png)
-
-*Note: Ensure 'images/validation_accuracy.png' exists in the 'images' folder.*
+![Validation Accuracy](images/UNET_segmentation/unet_val_acc.png)
 
 Validation accuracy ranges from approximately 0.75 to 0.85 across the different runs.
 
@@ -149,13 +222,23 @@ The image above shows a sample of validation images, with columns representing: 
 
 # Observations and Analysis
 
+## CNN (Part B)
+
+*   **Hyperparameter Optimization:** The parallel coordinate plot provides significant insights into the influence of hyperparameters on the model's validation accuracy.
+*   **Batch Normalization:** `use_batch_norm = True` consistently leads to better performance, as expected.  Batch normalization helps stabilize training and allows for higher learning rates.
+*   **Learning Rate:** The best values are located around a learning rate of `0.001`.  This suggests that smaller learning rate adjustments are beneficial for this specific architecture and dataset.
+*   **Activation Function:** `Leaky_Relu` shows better performances.
+*   **Dropout**: The best results came from experiments that used a dropout of 0.
+*   **Overfitting:** Some runs show a divergence between training and validation loss/accuracy, suggesting potential overfitting. This highlights the importance of techniques like dropout and data augmentation. The chosen configuration minimizes dropout, relying more on batch normalization and data augmentation to combat overfitting.
+
+## U-Net (Part D)
 *   **Batch Normalization:**  The parallel coordinates plot strongly suggests that using batch normalization (`use_batchnorm = True`) significantly improves model performance.
 
 *   **Learning Rate:** A learning rate in the range of 0.008-0.009 appears to be optimal.  Lower learning rates might lead to slower convergence, while higher rates could cause instability.
 
 *   **Filters Base and Depth:**  Increasing the `filters_base` parameter (up to a point) and using a U-Net depth of 3 or 4 generally improves performance. This suggests that a more complex model with more capacity is beneficial for this task.
 
-*   **Dropout Rate:** The lower the dropout rate, the better validation accuracy in general, as per the given parallel coordinate plot.
+*    **Dropout Rate:** The lower the dropout rate, the better validation accuracy in general, as per the given parallel coordinate plot.
 
 *   **Overfitting:** While the training loss continues to decrease, the validation loss plateaus or even slightly increases in some runs, suggesting the potential for minor overfitting. However, the validation accuracy and IoU/Dice scores continue to improve (or remain stable), so this overfitting is not severe.
 

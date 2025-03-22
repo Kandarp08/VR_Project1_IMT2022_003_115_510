@@ -445,11 +445,13 @@ The high validation metrics on the U-Net indicates effective learning of the seg
 # Running the Code
 
 `binary_classification.ipynb`: 
+
 (a) Download the zipfile of the dataset and set the zip_path accordingly.
 
 (b) Execute the code blocks.
 
 (c) Results of ML classifiers and CNN model will displayed.
+
 `masked_face_segmentation.ipynb`: 
 
 (a) If running the code for the first time, download the dataset by uncommenting and running the first three code blocks. The dataset will be downloaded in the root directory.

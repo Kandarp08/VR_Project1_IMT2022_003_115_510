@@ -20,7 +20,7 @@ Part B focuses on face mask detection using a Convolutional Neural Network (CNN)
         *   `RandomRotation(20)`: Randomly rotates images by up to 20 degrees.
         *  `Normalize`: Normalizes the pixel values using pre-calculated mean and standard deviation values (`[0.5748376, 0.49752444, 0.46703878]` and `[0.25625145, 0.24203679, 0.23397043]`, respectively).
     *   The dataset is split into training (80%) and validation (20%) sets using `torch.utils.data.random_split`.
-    *   PyTorch `DataLoader`s are used to create batches of data for training and validation, enabling efficient GPU utilization. The batch size of 128 and `num_workers` are configured.
+    *   PyTorch `DataLoader`s are used to create batches of data for training and validation. The batch size can be configured such that the model fits into VRAM.
 
 2.  **Model Definition (CNN):**
     *   A flexible CNN architecture is defined using PyTorch's `nn.Module`.
@@ -28,7 +28,7 @@ Part B focuses on face mask detection using a Convolutional Neural Network (CNN)
     *   `CNN`:  The main CNN class is highly configurable:
         *   `in_channels`: Number of input channels (3 for RGB images).
         *   `num_classes`: Number of output classes (2 for "with_mask" and "without_mask").
-        *   `conv_channels`:  A *list* specifying the number of output channels for *each* convolutional layer.
+        *   `conv_channels`:  A list specifying the number of output channels for *each* convolutional layer.
         *   `kernel_sizes`, `pool_types`, `pool_sizes`, `activations`: Lists specifying the parameters for each convolutional block.  The `_extend_param` method ensures these lists are the correct length, repeating the last element if necessary.
         *   `use_batch_norm`:  A boolean flag to enable/disable batch normalization.
         *   `fc_sizes`: A list specifying the sizes of the fully connected layers.
@@ -40,7 +40,6 @@ Part B focuses on face mask detection using a Convolutional Neural Network (CNN)
     *   The `train_model` function handles the training loop:
         *   Device Selection:  Uses CUDA (GPU) if available, otherwise falls back to CPU.
         *   Optimizer: Supports Adam, AdamW, and SGD optimizers.
-        *   Loss Function:  Uses `nn.CrossEntropyLoss` (appropriate for multi-class classification).
         *   Epochs and Batches: Iterates through epochs and batches of training data.
         *   Forward and Backward Pass:  Calculates predictions, loss, performs backpropagation, and updates model weights.
         *   Progress Bar (tqdm):  Displays a progress bar with training loss and accuracy.
@@ -71,7 +70,7 @@ The core of Part D focuses on semantic segmentation of face masks in images usin
 
 1.  **Data Loading and Preprocessing:**
     *   The `MSFDDataset` class handles loading image-segmentation pairs, resizing them to a consistent size (128x128), converting them to PyTorch tensors, and applying normalization to the image data.
-    *   DataLoaders are created for both training and validation sets to efficiently feed data to the model during training.
+    *   DataLoaders are created for both training and validation sets to feed data to the model during training.
 
 2.  **Model Definition (U-Net):**
     *   A flexible U-Net architecture (`UNet` class) is implemented.  This allows for configurable depth, base filter count, activation function (ReLU, LeakyReLU, or ELU), batch normalization, and dropout.

@@ -28,8 +28,22 @@ Part A focuses on face mask detection using Handcrafted Features and ML Classifi
    * `SVM`
      |             | precision | recall | f1-score | support |
      |-------------|-----------|--------|----------|---------|
-     |0            | 0.90      | 0.89   | 0.92     | 386     |      
+     |0            | 0.94      | 0.94   | 0.94     | 386     |      
+     |1            | 0.95      | 0.94   | 0.95     | 433     |
+
+     `accuracy`: 0.93961
+    * `Random Forest`
+     |             | precision | recall | f1-score | support |
+     |-------------|-----------|--------|----------|---------|
+     |0            | 0.95      | 0.89   | 0.92     | 386     |      
      |1            | 0.90      | 0.96   | 0.93     | 433     |
+
+     `accuracy`: 0.92307
+    * `Neural Network`
+     |             | precision | recall | f1-score | support |
+     |-------------|-----------|--------|----------|---------|
+     |0            | 0.92      | 0.94   | 0.93     | 386     |      
+     |1            | 0.94      | 0.93   | 0.93     | 433     |
 
      `accuracy`: 0.94261
 

@@ -279,6 +279,30 @@ The image above shows a sample of validation images, with columns representing: 
 
 ## 5. Comparing ML Classifiers with CNN
 
+**Feature Extraction:**
+
+*   **ML Classifiers (SVM, Random Forest, NN):**  These classifiers relied on hand-engineered features extracted using Histogram of Oriented Gradients (HOG) and Local Binary Patterns (LBP). These methods are designed to capture shape and texture information.
+*   **CNN:** The CNN learned relevant features directly from the image data through its convolutional layers. This eliminates the need for manual feature engineering.
+
+**Performance Comparison:**
+
+The CNN model exhibited slightly better performance, achieving a validation accuracy of about 97% with the best hyperparameters. The traditional ML classifiers, SVM, Random Forest, and Neural Network, reached accuracies of 94.26%, 92.31%, and 93.16% respectively. The CNN's ability to automatically learn relevant features allowed it to outperform the ML classifiers that relied on hand-engineered features.
+
+**Advantages and Disadvantages:**
+
+| Feature                       | ML Classifiers (SVM, RF, NN)                                                              | CNN                                                                                                                                          |
+| :---------------------------- | :------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------- |
+| Feature Engineering           | Requires manual feature extraction (HOG, LBP).  This can be time-consuming and may not capture all relevant information.  Feature quality is crucial. | Learns features automatically from data.  No manual intervention needed. Can adapt to specific nuances of the dataset.                             |
+| Feature Representation        | Feature representation limited by the design and effectiveness of HOG and LBP.                 | Can learn complex, hierarchical feature representations that are tailored to the classification task.                                      |
+| Generalization              | Potentially limited generalization if hand-engineered features are not robust to variations. | Better generalization due to the ability to learn robust features and adapt to variations in the data.                                    |
+| Computational Complexity      | Lower computational complexity for training with a small number of data points.                 | Higher computational complexity, especially during training, due to the large number of parameters in the network.                          |
+| Data Requirements           | Can perform reasonably well with smaller datasets, as feature engineering reduces complexity.  | Requires a larger amount of training data to learn effective features and prevent overfitting.                                                |
+| Architecture Design         | A relatively simple model, so easier to design. | A very complex model so requires a detailed knowledge to build this correctly. |
+
+**Conclusion:**
+
+The CNN generally exhibits superior performance compared to traditional ML classifiers because it automatically learns relevant features from the raw image data. The ML classifiers, being limited by the human engineering for the features and the complexity of models, perform slightly worse. The main difference between a good CNN model and good ML models is that the machine automatically learn the relevant features.
+
 ## 6. Comparing Traditional segmentation techniques with U-Net
 
 **Traditional Segmentation:**

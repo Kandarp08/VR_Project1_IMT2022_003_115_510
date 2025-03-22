@@ -18,6 +18,14 @@ The methodology is discussed in detail, along with the results obtained. We have
 
 ## Setup Instructions
 
+1. Clone the repository to your desired folder.
+
+2. Install the dependencies:
+
+    `pip install -r requirements.txt`.
+
+3. Run the code using the instructions provided in the last section of this README.
+
 ## Project Structure
 
 `face_mask_classification.ipynb`: Code for classification tasks (ML Classifiers and CNN)
@@ -435,3 +443,13 @@ The optimized CNN model demonstrated strong performance in distinguishing betwee
 The high validation metrics on the U-Net indicates effective learning of the segmentation task. Visual inspection of results also indicates good model performance, meaning it is doing a reasonable job of classifying pixels. The strong performance suggests the U-Net architecture is appropriate for the task and can learn mask features effectively.
 
 # Running the Code
+
+`binary_classification.ipynb`: 
+
+`masked_face_segmentation.ipynb`: 
+
+(a) If running the code for the first time, download the dataset by uncommenting and running the first three code blocks. The dataset will be downloaded in the root directory.
+
+(b) Execute rest of the code blocks.
+
+(c) The results for U-Net will be displayed in the notebook itself. The segmented outputs obtained using traditional techniques will be saved in <b>Output/PartC</b> directory. The average IoU for the same will be displayed in the notebook.

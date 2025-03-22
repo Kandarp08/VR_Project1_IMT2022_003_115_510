@@ -138,7 +138,7 @@ Based on the provided parallel coordinates plot, several hyperparameter configur
 *   **`use_batchnorm`:**  Boolean (True/False). Indicates whether batch normalization is used in the convolutional blocks.  `True` led to significantly better performance.
 *   **`learning_rate`:**  Float (ranging from approximately 0.0025 to 0.009). Controls the step size during optimization.  Values less than 0.0085 seem optimal based on the parallel coordinates plot.
 *   **`filters_base`:** Integer (16/32/64).  Determines the number of filters in the first convolutional layer. Higher values generally performed better.
-*   **`depth`:** Integer (ranging from 2 to 4).  Represents the depth of the U-Net (number of encoder/decoder blocks). A depth of 3 or 4 appears most effective.
+*   **`depth`:** Integer (ranging from 2 to 4).  Represents the depth of the U-Net (number of encoder/decoder blocks). A higher depth is negatively correlated with validation accuracy suggesting overfitting.
 *   **`dropout_rate`**: A value between 0 and 0.13. The experiments show that a lower dropout rate leads to higher val_accuracy.
 
 The parallel coordinates plot shows the relationships between these hyperparameters and the `val_accuracy`.  The lines colored closer to yellow/orange indicate higher validation accuracy.  From the plot, the best performing configurations tend to have:

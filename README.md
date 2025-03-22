@@ -231,7 +231,7 @@ The training loss generally decreases across all runs, with most runs reaching a
 
 ![Validation Accuracy](images/UNET_segmentation/unet_val_acc.png)
 
-Validation accuracy ranges from approximately 0.75 to 0.85 across the different runs.
+Validation accuracy ranges from approximately 0.82 to 0.85 across the different runs.
 
 <br>
 
@@ -239,7 +239,7 @@ Validation accuracy ranges from approximately 0.75 to 0.85 across the different 
 
 ![Validation Mean Dice](images/UNET_segmentation/unet_val_dice.png)
 
-The validation mean Dice score ranges from approximately 0.70 to 0.95.
+The validation mean Dice score ranges from approximately 0.85 to 0.95.
 
 <br>
 
@@ -247,7 +247,7 @@ The validation mean Dice score ranges from approximately 0.70 to 0.95.
 
 ![Validation Mean IOU](images/UNET_segmentation/unet_val_iou.png)
 
-The validation mean IoU score shows a similar trend to the Dice score, ranging from approximately 0.60 to 0.92.
+The validation mean IoU score shows a similar trend to the Dice score, ranging from approximately 0.77 to 0.91.
 
 <br>
 
@@ -255,7 +255,7 @@ The validation mean IoU score shows a similar trend to the Dice score, ranging f
 
 ![Validation Loss](images/UNET_segmentation/unet_val_loss.png)
 
-Validation loss values vary between approximately 0.7 and 1.2.
+Validation loss reaches values below 0.8 in most runs.
 
 <br>
 

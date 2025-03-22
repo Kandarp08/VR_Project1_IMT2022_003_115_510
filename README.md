@@ -105,13 +105,17 @@ The core of Part D focuses on semantic segmentation of face masks in images usin
 
 ## 1. Part B
 
+Hyperparameter sweep:
+<br>
+https://wandb.ai/ritishtest1/face-mask-detection-vr-mini-project-1/sweeps/uo9mdr7h
+
 The provided parallel coordinates plot and line graphs illustrate the results of hyperparameter optimization. The key hyperparameters explored were:
 
-* **`activations`**:  Activation function used in the convolutional and fully connected layers (`relu`, `leaky_relu`, `elu`, `y_relu`). `Leaky_relu` was selected for the final model based on performance.
+* **`activations`**:  Activation function used in the convolutional and fully connected layers (`relu`, `leaky_relu`, `elu`, `y_relu`).
 * **`batch_size`**: Batch size for training and validation data loaders (ranging from approximately 10 to 130). The shown experiments were run with a value of 128.
-* **`conv_channels`**:  Number of output channels for each convolutional layer (various combinations of 16, 32, 64, and 128).  The model used a configuration of `[32, 64, 128]`.
-* **`dropout_rates`**:  Dropout rates for the fully connected layers (0, 0.3, 0.5). A value of 0 leads to higher val_accuracy.
-* **`fc_sizes`**:  Sizes of the fully connected layers (various combinations).  The model used `[128, 64]`.
+* **`conv_channels`**:  Number of output channels for each convolutional layer.
+* **`dropout_rates`**:  Dropout rates for the fully connected layers (0, 0.3, 0.5).
+* **`fc_sizes`**:  Sizes of the fully connected layers (various combinations).
 * **`use_batch_norm`**: Boolean flag to enable/disable batch normalization (True/False).  `True` (enabled) was chosen for the best model.
 * **`optimizer`**: Choice of optimizer (`adam`, `adamw`). `adamw` was selected.
 * **`learning_rate`**: Learning rate for the optimizer (ranging from approximately 0.001 to 0.009). The best performing runs were around a learning rate of 0.001.
@@ -125,18 +129,22 @@ The parallel coordinate plot, particularly the lines colored in the yellow/orang
 
 ## 2. Part D
 
+Hyperparameter sweep:
+<br>
+https://wandb.ai/ritishtest1/masked-face-segmentation/sweeps/yepv6uvq
+
 Based on the provided parallel coordinates plot, several hyperparameter configurations were explored for the U-Net model. The most relevant parameters and their ranges are:
 
 *   **`use_batchnorm`:**  Boolean (True/False). Indicates whether batch normalization is used in the convolutional blocks.  `True` led to significantly better performance.
-*   **`learning_rate`:**  Float (ranging from approximately 0.0025 to 0.0095). Controls the step size during optimization.  Values less than 0.0085 seem optimal based on the parallel coordinates plot.
-*   **`filters_base`:** Integer (ranging from approximately 15 to 65).  Determines the number of filters in the first convolutional layer. Higher values generally performed better.
+*   **`learning_rate`:**  Float (ranging from approximately 0.0025 to 0.009). Controls the step size during optimization.  Values less than 0.0085 seem optimal based on the parallel coordinates plot.
+*   **`filters_base`:** Integer (16/32/64).  Determines the number of filters in the first convolutional layer. Higher values generally performed better.
 *   **`depth`:** Integer (ranging from 2 to 4).  Represents the depth of the U-Net (number of encoder/decoder blocks). A depth of 3 or 4 appears most effective.
 *   **`dropout_rate`**: A value between 0 and 0.13. The experiments show that a lower dropout rate leads to higher val_accuracy.
 
 The parallel coordinates plot shows the relationships between these hyperparameters and the `val_accuracy`.  The lines colored closer to yellow/orange indicate higher validation accuracy.  From the plot, the best performing configurations tend to have:
 
 *   `use_batchnorm`: True
-*   `learning_rate`:  Around 0.008 - 0.009
+*   `learning_rate`:  Less than 0.008
 *   `filters_base`:  32 or 64
 *   `depth`: 3 or 4
 *   `dropout_rate`: Close to 0

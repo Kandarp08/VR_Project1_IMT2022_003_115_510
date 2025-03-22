@@ -7,7 +7,22 @@
 # Methodology
 
 ## 1. Part A
+Part A focuses on face mask detection using Handcrafted Features and ML Classifiers. The approach involves these key steps:
 
+1. **Feature Extraction:**
+   * HOG (Histogram of Oriented Gradients): Captures the structure and gradient information of an image, making it useful for detecting object shapes and edges.
+
+   * LBP (Local Binary Patterns): LBP is a texture descriptor that works by comparing neighbouring pixels and creating a binary pattern.
+
+2. **Data Preprocessing:**
+   * Extracts features from both categories.
+   * The extracted features are standardized using `StandardScaler` before training the classifiers.
+   * Spilts the dataset into training (80%) and testing (20%).
+  
+3. **Training Machine Learning Models:**
+   * Support Vector Machine(SVM)
+   * Random Forest(RF)
+   * Neural Network Model: A simple fully connected feedforward neural network is implemented in PyTorch. The model is trained for 100 epochs using Binary Cross-Entropy Loss (BCELoss) and Adam optimizer with a learning rate scheduler.
 ## 2. Part B
 
 Part B focuses on face mask detection using a Convolutional Neural Network (CNN).  The approach involves these key steps:

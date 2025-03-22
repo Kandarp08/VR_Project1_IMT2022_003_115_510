@@ -218,7 +218,7 @@ The parallel coordinates plot shows the relationships between these hyperparamet
 # Results
 
 ## 1. Part A
-  * `SVM`  
+* `SVM`  
   
   | Class | Precision | Recall | F1-Score | Support |
   |-------|-----------|--------|----------|---------|

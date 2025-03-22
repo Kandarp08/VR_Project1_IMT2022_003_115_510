@@ -30,7 +30,8 @@ Part A focuses on face mask detection using Handcrafted Features and ML Classifi
      |-------------|-----------|--------|----------|---------|
      |0            | 0.90      | 0.89   | 0.92     | 386     |      
      |1            | 0.90      | 0.96   | 0.93     | 433     |
-     | accuracy                         | 0.92     | 819     |
+
+     `accuracy`: 0.94261
 
 
 ## 2. Part B

@@ -25,30 +25,33 @@ Part A focuses on face mask detection using Handcrafted Features and ML Classifi
    * `Neural Network Model`:  A simple feedforward network with ReLU activations, dropout, and sigmoid activation for binary classification.  
 
 4. **Evaluation:**
-   * `SVM`
-     |             | precision | recall | f1-score | support |
-     |-------------|-----------|--------|----------|---------|
-     |0            | 0.94      | 0.94   | 0.94     | 386     |      
-     |1            | 0.95      | 0.94   | 0.95     | 433     |
-     |-------------------------------------------------------|
-
-     `accuracy`: 0.93961
+  * `SVM`  
    
-    * `Random Forest`
-     |             | precision | recall | f1-score | support |
-     |-------------|-----------|--------|----------|---------|
-     |0            | 0.95      | 0.89   | 0.92     | 386     |      
-     |1            | 0.90      | 0.96   | 0.93     | 433     |
+  | Class | Precision | Recall | F1-Score | Support |
+  |-------|-----------|--------|----------|---------|
+  | 0     | 0.94      | 0.94   | 0.94     | 386     |      
+  | 1     | 0.95      | 0.94   | 0.95     | 433     |
 
-     `accuracy`: 0.92307
-   
-    * `Neural Network`
-     |             | precision | recall | f1-score | support |
-     |-------------|-----------|--------|----------|---------|
-     |0            | 0.92      | 0.94   | 0.93     | 386     |      
-     |1            | 0.94      | 0.93   | 0.93     | 433     |
+  **Accuracy**: `0.93961`
 
-     `accuracy`: 0.94261
+* `Random Forest`  
+
+  | Class | Precision | Recall | F1-Score | Support |
+  |-------|-----------|--------|----------|---------|
+  | 0     | 0.95      | 0.89   | 0.92     | 386     |      
+  | 1     | 0.90      | 0.96   | 0.93     | 433     |
+
+  **Accuracy**: `0.92307`
+
+* `Neural Network`  
+
+  | Class | Precision | Recall | F1-Score | Support |
+  |-------|-----------|--------|----------|---------|
+  | 0     | 0.92      | 0.94   | 0.93     | 386     |      
+  | 1     | 0.94      | 0.93   | 0.93     | 433     |
+
+  **Accuracy**: `0.94261`
+
 
 
 ## 2. Part B

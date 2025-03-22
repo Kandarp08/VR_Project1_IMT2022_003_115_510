@@ -187,24 +187,24 @@ After completing the segmentation for each of the 500 images, the average IoU is
         <th>Ground Truth</th>
     </tr>
     <tr>
-        <td><img src="images/Traditional_segmentation/000020_1.jpg.png" alt="Segmented image 1" width="300" height="100"></td>
-        <td><img src="images/Traditional_segmentation/000020_1.jpg" alt="Ground truth 1" width="300" height="100"></td>
+        <td><img src="images/Traditional_segmentation/000020_1.jpg.png" alt="Segmented image 1" width="150" height="100"></td>
+        <td><img src="images/Traditional_segmentation/000020_1.jpg" alt="Ground truth 1" width="150" height="100"></td>
     </tr>
     <tr>
-        <td><img src="images/Traditional_segmentation/000029_1.jpg.png" alt="Segmented image 2" width="300" height="100"></td>
-        <td><img src="images/Traditional_segmentation/000029_1.jpg" alt="Ground truth 2" width="300" height="100"></td>
+        <td><img src="images/Traditional_segmentation/000029_1.jpg.png" alt="Segmented image 2" width="150" height="100"></td>
+        <td><img src="images/Traditional_segmentation/000029_1.jpg" alt="Ground truth 2" width="150" height="100"></td>
     </tr>
     <tr>
-        <td><img src="images/Traditional_segmentation/000051_1.jpg.png" alt="Segmented image 3" width="300" height="100"></td>
-        <td><img src="images/Traditional_segmentation/000051_1.jpg" alt="Ground truth 3" width="300" height="100"></td>
+        <td><img src="images/Traditional_segmentation/000051_1.jpg.png" alt="Segmented image 3" width="150" height="100"></td>
+        <td><img src="images/Traditional_segmentation/000051_1.jpg" alt="Ground truth 3" width="150" height="100"></td>
     </tr>
     <tr>
-        <td><img src="images/Traditional_segmentation/000056_1.jpg.png" alt="Segmented image 4" width="300" height="100"></td>
-        <td><img src="images/Traditional_segmentation/000056_1.jpg" alt="Ground truth 4" width="300" height="100"></td>
+        <td><img src="images/Traditional_segmentation/000056_1.jpg.png" alt="Segmented image 4" width="150" height="100"></td>
+        <td><img src="images/Traditional_segmentation/000056_1.jpg" alt="Ground truth 4" width="150" height="100"></td>
     </tr>
     <tr>
-        <td><img src="images/Traditional_segmentation/000242_2.jpg.png" alt="Segmented image 5" width="300" height="100"></td>
-        <td><img src="images/Traditional_segmentation/000242_2.jpg" alt="Ground truth 5" width="300" height="100"></td>
+        <td><img src="images/Traditional_segmentation/000242_2.jpg.png" alt="Segmented image 5" width="150" height="100"></td>
+        <td><img src="images/Traditional_segmentation/000242_2.jpg" alt="Ground truth 5" width="150" height="100"></td>
     </tr>
 </table>
 

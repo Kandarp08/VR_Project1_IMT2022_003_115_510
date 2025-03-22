@@ -20,9 +20,18 @@ Part A focuses on face mask detection using Handcrafted Features and ML Classifi
    * Spilts the dataset into training (80%) and testing (20%).
   
 3. **Training Machine Learning Models:**
-   * Support Vector Machine(SVM)
-   * Random Forest(RF)
-   * Neural Network Model: A simple fully connected feedforward neural network is implemented in PyTorch. The model is trained for 100 epochs using Binary Cross-Entropy Loss (BCELoss) and Adam optimizer with a learning rate scheduler.
+   * `Support Vector Machine(SVM)`: Radial Basis Function (RBF) kernel with `C=10`.
+   * `Random Forest(RF)`: 200 trees, `max_depth=20`, and class balancing.  
+   * `Neural Network Model`:  A simple feedforward network with ReLU activations, dropout, and sigmoid activation for binary classification.  
+
+4. **Evaluation:**
+   * `SVM`:
+               precision    recall  f1-score   support
+       0       0.94      0.94      0.94       386
+       1       0.95      0.94      0.95       433
+
+accuracy                           0.94       819
+
 ## 2. Part B
 
 Part B focuses on face mask detection using a Convolutional Neural Network (CNN).  The approach involves these key steps:

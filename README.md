@@ -25,32 +25,7 @@ Part A focuses on face mask detection using Handcrafted Features and ML Classifi
    * `Neural Network Model`:  A simple feedforward network with ReLU activations, dropout, and sigmoid activation for binary classification.  
 
 4. **Evaluation:**
-  * `SVM`  
-   
-  | Class | Precision | Recall | F1-Score | Support |
-  |-------|-----------|--------|----------|---------|
-  | 0     | 0.94      | 0.94   | 0.94     | 386     |      
-  | 1     | 0.95      | 0.94   | 0.95     | 433     |
 
-  **Accuracy**: `0.93961`
-
-* `Random Forest`  
-
-  | Class | Precision | Recall | F1-Score | Support |
-  |-------|-----------|--------|----------|---------|
-  | 0     | 0.95      | 0.89   | 0.92     | 386     |      
-  | 1     | 0.90      | 0.96   | 0.93     | 433     |
-
-  **Accuracy**: `0.92307`
-
-* `Neural Network`  
-
-  | Class | Precision | Recall | F1-Score | Support |
-  |-------|-----------|--------|----------|---------|
-  | 0     | 0.92      | 0.94   | 0.93     | 386     |      
-  | 1     | 0.94      | 0.93   | 0.93     | 433     |
-
-  **Accuracy**: `0.94261`
 
 
 
@@ -210,7 +185,33 @@ The parallel coordinates plot shows the relationships between these hyperparamet
 # Results
 
 ## 1. Part A
+  * `SVM`  
+   
+  | Class | Precision | Recall | F1-Score | Support |
+  |-------|-----------|--------|----------|---------|
+  | 0     | 0.94      | 0.94   | 0.94     | 386     |      
+  | 1     | 0.95      | 0.94   | 0.95     | 433     |
 
+  **Accuracy**: `0.93961`
+
+* `Random Forest`  
+
+  | Class | Precision | Recall | F1-Score | Support |
+  |-------|-----------|--------|----------|---------|
+  | 0     | 0.95      | 0.89   | 0.92     | 386     |      
+  | 1     | 0.90      | 0.96   | 0.93     | 433     |
+
+  **Accuracy**: `0.92307`
+
+* `Neural Network`  
+
+  | Class | Precision | Recall | F1-Score | Support |
+  |-------|-----------|--------|----------|---------|
+  | 0     | 0.92      | 0.94   | 0.93     | 386     |      
+  | 1     | 0.94      | 0.93   | 0.93     | 433     |
+
+  **Accuracy**: `0.94261`
+  
 ## 2. Part B
 
 The provided graphs illustrate the model performance during the hyperparameter tuning.

@@ -170,19 +170,29 @@ The parallel coordinates plot shows the relationships between these hyperparamet
 The provided graphs illustrate the model performance during the hyperparameter tuning.
 
 **Training Accuracy:**
-![Training Accuracy](images/CNN_detection/cnn_train_acc.png)
+<img src="images/CNN_detection/cnn_train_acc.png" width="500">
+
 The training accuracy across multiple runs with various hyperparameters.
 
+<br>
+
 **Validation Accuracy:**
-![Validation Accuracy](images/CNN_detection/cnn_val_acc.png)
+<img src="images/CNN_detection/cnn_val_acc.png" width="500">
+
 The validation accuracy across multiple runs with various hyperparameters, which reached up to approximately 97%.
 
+<br>
+
 **Training Loss:**
-![Training Loss](images/CNN_detection/cnn_train_loss.png)
+<img src="images/CNN_detection/cnn_train_loss.png" width="500">
+
 The training loss across multiple runs with various hyperparameters.
 
+<br>
+
 **Validation Loss:**
-![Validation Loss](images/CNN_detection/cnn_val_loss.png)
+<img src="images/CNN_detection/cnn_val_loss.png" width="500">
+
 The validation loss across multiple runs with various hyperparameters.
 
 
@@ -223,7 +233,7 @@ The provided line graphs show the training and validation metrics over 10 epochs
 
 **Training Loss:**
 
-![Training Loss](images/UNET_segmentation/unet_train_loss.png)
+<img src="images/UNET_segmentation/unet_train_loss.png" width="500">
 
 The training loss generally decreases across all runs, with most runs reaching a training loss below 0.8.
 
@@ -231,7 +241,7 @@ The training loss generally decreases across all runs, with most runs reaching a
 
 **Validation Accuracy:**
 
-![Validation Accuracy](images/UNET_segmentation/unet_val_acc.png)
+<img src="images/UNET_segmentation/unet_val_acc.png" width="500">
 
 Validation accuracy ranges from approximately 0.82 to 0.85 across the different runs.
 
@@ -239,7 +249,7 @@ Validation accuracy ranges from approximately 0.82 to 0.85 across the different 
 
 **Validation Mean Dice:**
 
-![Validation Mean Dice](images/UNET_segmentation/unet_val_dice.png)
+<img src="images/UNET_segmentation/unet_val_dice.png" width="500">
 
 The validation mean Dice score ranges from approximately 0.85 to 0.95.
 
@@ -247,7 +257,7 @@ The validation mean Dice score ranges from approximately 0.85 to 0.95.
 
 **Validation Mean IOU:**
 
-![Validation Mean IOU](images/UNET_segmentation/unet_val_iou.png)
+<img src="images/UNET_segmentation/unet_val_iou.png" width="500">
 
 The validation mean IoU score shows a similar trend to the Dice score, ranging from approximately 0.77 to 0.91.
 
@@ -255,7 +265,7 @@ The validation mean IoU score shows a similar trend to the Dice score, ranging f
 
 **Validation Loss:**
 
-![Validation Loss](images/UNET_segmentation/unet_val_loss.png)
+<img src="images/UNET_segmentation/unet_val_loss.png" width="500">
 
 Validation loss reaches values below 0.8 in most runs.
 
@@ -263,7 +273,7 @@ Validation loss reaches values below 0.8 in most runs.
 
 **Sample Predictions:**
 
-![Sample Predictions](images/UNET_segmentation/unet_outputs.png)
+<img src="images/UNET_segmentation/unet_outputs.png" width="500">
 
 The image above shows a sample of validation images, with columns representing: Original Image, Prediction Overlay, and Ground Truth Overlay from the U-Net model.
 

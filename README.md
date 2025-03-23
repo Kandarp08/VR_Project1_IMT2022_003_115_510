@@ -248,30 +248,30 @@ The parallel coordinates plot shows the relationships between these hyperparamet
 The provided graphs illustrate the model performance during the hyperparameter tuning.
 
 **Training Accuracy:**
-<img src="images/CNN_detection/cnn_train_acc.png" width="500">
-
 The training accuracy across multiple runs with various hyperparameters. We achieve 91-97% trainig accuracy across different runs in 10 epochs.
+
+<img src="images/CNN_detection/cnn_train_acc.png" width="500">
 
 <br>
 
 **Validation Accuracy:**
-<img src="images/CNN_detection/cnn_val_acc.png" width="500">
-
 The validation accuracy across multiple runs with various hyperparameters, which reached up to approximately 97%.
+
+<img src="images/CNN_detection/cnn_val_acc.png" width="500">
 
 <br>
 
 **Training Loss:**
-<img src="images/CNN_detection/cnn_train_loss.png" width="500">
-
 The training loss across multiple runs with various hyperparameters, which reached values ranging from 0.09 to 0.23 over multiple hyperparameters after 10 epochs.
+
+<img src="images/CNN_detection/cnn_train_loss.png" width="500">
 
 <br>
 
 **Validation Loss:**
-<img src="images/CNN_detection/cnn_val_loss.png" width="500">
-
 The validation loss across multiple runs with various hyperparameters, which reached values ranging from 0.1 to 0.27 over multiple hyperparameters after 10 epochs.
+
+<img src="images/CNN_detection/cnn_val_loss.png" width="500">
 
 
 ## 3. Part C

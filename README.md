@@ -250,7 +250,7 @@ The provided graphs illustrate the model performance during the hyperparameter t
 **Training Accuracy:**
 <img src="images/CNN_detection/cnn_train_acc.png" width="500">
 
-The training accuracy across multiple runs with various hyperparameters.
+The training accuracy across multiple runs with various hyperparameters. We achieve 91-97% trainig accuracy across different runs in 10 epochs.
 
 <br>
 
@@ -264,14 +264,14 @@ The validation accuracy across multiple runs with various hyperparameters, which
 **Training Loss:**
 <img src="images/CNN_detection/cnn_train_loss.png" width="500">
 
-The training loss across multiple runs with various hyperparameters.
+The training loss across multiple runs with various hyperparameters, which reached values ranging from 0.09 to 0.23 over multiple hyperparameters after 10 epochs.
 
 <br>
 
 **Validation Loss:**
 <img src="images/CNN_detection/cnn_val_loss.png" width="500">
 
-The validation loss across multiple runs with various hyperparameters.
+The validation loss across multiple runs with various hyperparameters, which reached values ranging from 0.1 to 0.27 over multiple hyperparameters after 10 epochs.
 
 
 ## 3. Part C

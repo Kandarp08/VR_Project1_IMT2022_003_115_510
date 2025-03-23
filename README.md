@@ -248,7 +248,7 @@ The parallel coordinates plot shows the relationships between these hyperparamet
 The provided graphs illustrate the model performance during the hyperparameter tuning.
 
 **Training Accuracy:**
-The training accuracy across multiple runs with various hyperparameters. We achieve 91-97% trainig accuracy across different runs in 10 epochs.
+The training accuracy across multiple runs with various hyperparameters. We achieved 91-97% training accuracy across different runs in 10 epochs.
 
 <img src="images/CNN_detection/cnn_train_acc.png" width="500">
 

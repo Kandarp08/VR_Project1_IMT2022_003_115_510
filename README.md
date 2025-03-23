@@ -14,8 +14,6 @@ The methodology is discussed in detail, along with the results obtained. We have
 * Kandarp Dave (IMT2022115)
 * Bijeet Basak (IMT2022510)
 
-# Setup Instructions and Project Structure
-
 ## Setup Instructions
 
 1. Clone the repository to your desired folder.

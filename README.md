@@ -405,6 +405,17 @@ In contrast to the traditional method, the U-Net segmentation (based on previous
 
 # Observations and Analysis
 
+## ML Classifiers (Part A)
+
+**Observations:**
+
+* **Consistent Training & Validation:** The loss reduction in the neural network training suggests effective learning, and all three models showed stable validation performance.
+* **Class Balance Reflected in Performance:** Both precision and recall are balanced, indicating that the dataset does not suffer from severe class imbalance issues.
+
+**Analysis:**
+
+The SVM classifier demonstrated good best performance, suggesting that the extracted HOG and LBP features are well-suited for distinguishing between masked and unmasked images. The neural network performance can be improved by providing a bigger dataset. Overall, the results indicate that feature extraction methods (HOG + LBP) combined with traditional ML models like SVM can perform competitively against neural networks for this classification task.
+
 ## CNN (Part B)
 
 **Observations:**
